@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3" *ngFor="let album of albums">
+      <a routerLink="/{{album.id}}/photos">
+        <div class="card">
+          <div class="card-body" style="background-color:blueviolet; height: 150px; width: 100%">
+
+          </div>
+          <div class="card-footer">
+            <h4>{{album.title}}</h4>
+            <h6>by {{album.username}}</h6>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
