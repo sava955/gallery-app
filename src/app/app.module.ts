@@ -9,7 +9,6 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { AlbumListComponent } from './album-list/album-list.component';
-import { AlbumCreateComponent } from './album-create/album-create.component';
 import { AlbumContentComponent } from './album-content/album-content.component';
 import { PhotosComponent } from './photos/photos.component';
 
@@ -19,7 +18,6 @@ import { SearchPipe } from './pipes/search.pipe';
   declarations: [
     AppComponent,
     AlbumListComponent,
-    AlbumCreateComponent,
     AlbumContentComponent,
     PhotosComponent,
     SearchPipe
