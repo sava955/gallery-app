@@ -1,0 +1,38 @@
+.navbar-brand {
+    color: black;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.navbar-brand span {
+    color: blueviolet;
+}
+
+.container {
+    margin: 5vh auto;
+}
+
+.card {
+    margin-top: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.card-body {
+    background-image: url('../../assets/images/album-cover.png');
+    background-size: cover;
+    height: 150px;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.card-title, .card-subtitle {
+    color: black;
+}
+
+.card-subtitle span {
+    color: blueviolet;
+}

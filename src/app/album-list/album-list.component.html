@@ -1,17 +1,23 @@
+<nav class="navbar navbar-sm shadow">
+    <a routerLink="/" class="navbar-brand">
+      <span>Gallery</span>App
+    </a>
+</nav>  
 <div class="container">
   <div class="row">
-    <div class="col-sm-3" *ngFor="let album of albums">
+    <div class="col-6 col-sm-4 col-md-3" *ngFor="let album of albums" [@flyInOut]="'in'">
       <a routerLink="/{{album.id}}/photos">
         <div class="card">
-          <div class="card-body" style="background-color:blueviolet; height: 150px; width: 100%">
-
+          <div class="card-body">
+             
           </div>
           <div class="card-footer">
-            <h4>{{album.title}}</h4>
-            <h6>by {{album.username}}</h6>
+            <h5 class="card-title text-capitalize">{{album.title}}</h5>
+            <h6 class="card-subtitle">by <span class="text-capitalize">{{album.username}}</span></h6>
           </div>
         </div>
       </a>
     </div>
   </div>
 </div>
+

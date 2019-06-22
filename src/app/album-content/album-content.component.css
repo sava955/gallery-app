@@ -1,0 +1,111 @@
+.back {
+    border: none;
+    background: transparent; 
+}
+
+.fas {
+    font-size: 28px;
+}
+
+.fas:hover {
+    color: blueviolet;
+}
+
+.form-group {
+    width: 30%;
+    float: right;
+}
+
+.card {
+    padding: 0;
+    margin-top: 20px;
+    border: none;
+}
+
+.card:hover {
+   cursor: pointer;
+} 
+
+.card-body {
+    padding: 0;
+}
+
+.card-footer {
+    padding: 10px 0;
+    font-weight: 700;
+}
+
+.modal-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background: #000;
+}
+
+.controls {
+    position: absolute;
+    top: 40%;
+    bottom: 40%;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 35px;
+}
+
+.controls:hover {
+    color: #fff;
+    cursor: pointer;
+}
+
+.delete {
+    position: absolute;
+    right: 0;
+    background: transparent;
+    font-size: 28px;
+}
+
+.delete:hover {
+    color: #fff;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    color: #fff;
+    font-size: 30px;
+}
+
+.modal-dialog {
+    margin: auto;
+    height: 100%;
+    width: auto;
+    background-attachment: local;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+}
+
+.title {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+   .form-group {
+       width: 60%;
+   }
+}
+
+@media screen and (max-width: 600px) {
+   .form-group {
+       width: 100%;
+   }
+}
+
