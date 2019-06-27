@@ -9,6 +9,7 @@ import {
   animate,
   transition
 } from '@angular/animations';
+import { Photos } from '../models/photos';
 
 @Component({
   selector: 'app-album-list',
@@ -29,18 +30,30 @@ import {
 })
 export class AlbumListComponent implements OnInit {
   albums: any[] = [];
+  photos: any[] = [];
+  p1: number = 1;
+  p2: number = 1;
+
   constructor(private albumService: AlbumService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.getAlbums();
+    this.getPhotos();
   }
   
   getAlbums() {
     this.albumService.getMergedAlbums()
     .subscribe((albums) => {
-      console.log(albums);
       this.albums = albums;
     })
+  }
+
+  getPhotos() {
+    this.albumService.getAllPhotos().subscribe(
+      (photos) => {
+        this.photos = photos;
+      }
+    )
   }
 
 }

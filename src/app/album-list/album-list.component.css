@@ -1,3 +1,7 @@
+.container {
+    margin: 5vh auto;
+}
+
 .navbar-brand {
     color: black;
     font-weight: 700;
@@ -8,8 +12,19 @@
     color: blueviolet;
 }
 
-.container {
-    margin: 5vh auto;
+.albums {
+    background-color: whitesmoke;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.photos {
+    margin-top: 20px;
+}
+
+.title {
+    font-weight: 700;
+    padding-bottom: 20px;
 }
 
 .card {
@@ -18,7 +33,7 @@
     overflow: hidden;
 }
 
-.card-body {
+.album-cover {
     background-image: url('../../assets/images/album-cover.png');
     background-size: cover;
     height: 150px;
@@ -35,4 +50,26 @@ a {
 
 .card-subtitle span {
     color: blueviolet;
+}
+
+.pagination-box {
+    width: 50%;
+    background: white;
+    border-radius: 30px;
+    margin: 20px auto;
+    padding: 0;
+}
+
+.pagination /deep/ .ngx-pagination .current {
+    background: blueviolet;
+}
+
+.form-group {
+    padding: 20px;
+}
+
+@media screen and (max-width: 900px) {
+    .pagination-box {
+        width: 100%;
+    }
 }

@@ -1,0 +1,42 @@
+.photo-container {
+    width: 800px;
+    background: black;
+    margin: auto;
+}
+
+.nav {
+    background: white;
+    padding: 15px;
+}
+
+.back .fas {
+    font-size: 28px;
+}
+
+.back {
+    font-size: 28px;
+}
+
+.back:hover {
+    color: blueviolet;
+}
+
+.img-box {
+    height: 600px;
+    width: 600px;
+    margin: auto;
+}
+
+.title {
+    padding: 20px;
+}
+
+.title span {
+    color: white;
+}
+
+@media screen and (max-width: 900px) {
+    .photo-container {
+        width: 100%;
+    }
+}

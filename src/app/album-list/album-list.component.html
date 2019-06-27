@@ -1,23 +1,58 @@
 <nav class="navbar navbar-sm shadow">
-    <a routerLink="/" class="navbar-brand">
-      <span>Gallery</span>App
-    </a>
-</nav>  
+  <a routerLink="/" class="navbar-brand">
+    <span>Gallery</span>App
+  </a>
+</nav>
 <div class="container">
-  <div class="row">
-    <div class="col-6 col-sm-4 col-md-3" *ngFor="let album of albums" [@flyInOut]="'in'">
-      <a routerLink="/{{album.id}}/photos">
+  <div class="albums">
+    <h3 class="title text-capitalize">albums</h3>
+    <div class="row">
+      <div class="col-6 col-sm-4 col-md-3" *ngFor="let album of albums | paginate: { itemsPerPage: 8, currentPage: p1 }"
+        [@flyInOut]="'in'">
+        <a routerLink="/{{album.id}}/photos">
+          <div class="card">
+            <div class="card-body album-cover">
+
+            </div>
+            <div class="card-footer">
+              <h5 class="card-title text-capitalize">{{album.title}}</h5>
+              <h6 class="card-subtitle">by <span class="text-capitalize">{{album.username}}</span></h6>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="d-flex p-3 justify-content-center pagination-box">
+      <pagination-controls (pageChange)="p1 = $event" class="pagination"></pagination-controls>
+    </div>
+  </div>
+  <div class="photos">
+    <h3 class="title text-capitalize">photos</h3>
+    <form class="form-inline">
+        <div class="form-group shadow">
+            <input [(ngModel)]="searchPhoto" class="form-control" name="photo" type="text" placeholder="Search photos">
+        </div>
+    </form>
+    <div class="row">
+      <div class="col-6 col-sm-4 col-md-3" *ngFor="let photo of photos |
+      filter:searchPhoto | paginate: { itemsPerPage: 16, currentPage: p2 }" [@flyInOut]="'in'">
         <div class="card">
-          <div class="card-body">
-             
+          <div class="card-body shadow">
+            <a routerLink="../{{photo.id}}">
+              <img [src]="photo.thumbnailUrl" alt="" style="width: 100%; height: 160px;">
+            </a>
           </div>
           <div class="card-footer">
-            <h5 class="card-title text-capitalize">{{album.title}}</h5>
-            <h6 class="card-subtitle">by <span class="text-capitalize">{{album.username}}</span></h6>
+            <span class="text-capitalize">{{photo.title}}</span>
+            <button type="button" (click)="deletePhoto(photo.id)" class="btn delete" data-dismiss="modal">
+              <i class="fas fa-trash-alt"></i>
+            </button>
           </div>
         </div>
-      </a>
+      </div>
+    </div>
+    <div class="d-flex p-3 justify-content-center pagination-box">
+      <pagination-controls (pageChange)="p2 = $event" class="pagination"></pagination-controls>
     </div>
   </div>
 </div>
-

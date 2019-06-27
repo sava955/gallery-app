@@ -3,11 +3,15 @@
     background: transparent; 
 }
 
-.fas {
+.back .fas {
     font-size: 28px;
 }
 
-.fas:hover {
+.back {
+    font-size: 28px;
+}
+
+.back:hover {
     color: blueviolet;
 }
 
@@ -35,66 +39,14 @@
     font-weight: 700;
 }
 
-.modal-container {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    background: #000;
-}
-
-.controls {
-    position: absolute;
-    top: 40%;
-    bottom: 40%;
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 35px;
-}
-
-.controls:hover {
-    color: #fff;
-    cursor: pointer;
-}
-
 .delete {
-    position: absolute;
-    right: 0;
+    float: right;
     background: transparent;
     font-size: 28px;
 }
 
 .delete:hover {
-    color: #fff;
-}
-
-.close {
-    position: absolute;
-    top: 0;
-    right: 10px;
-    color: #fff;
-    font-size: 30px;
-}
-
-.modal-dialog {
-    margin: auto;
-    height: 100%;
-    width: auto;
-    background-attachment: local;
-    background-repeat: no-repeat;
-    background-size: auto;
-    background-position: center;
-}
-
-.title {
-    position: absolute;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    width: 100%;
-    padding: 10px;
+    color: blueviolet;
 }
 
 @media screen and (max-width: 1000px) {

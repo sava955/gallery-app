@@ -1,8 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Observable, forkJoin } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
-import { map, filter } from 'rxjs/operators';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
+import { map, filter, tap, catchError } from 'rxjs/operators';
 import { Photos } from '../models/photos';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable({
   providedIn: 'root'
@@ -28,10 +32,8 @@ export class AlbumService {
     const users = this.getUsers();
     const merged = forkJoin(albums, users)
       .pipe(map(data => data[0].reduce((user, album, photo) => {
-        debugger;
         const userId = data[1].find(user => user.id === album.userId);
         if (userId) {
-          debugger;
           user.push({
             id: album.id,
             username: userId.name,
@@ -52,6 +54,22 @@ export class AlbumService {
         }
       })
     );
+  }
+
+  public getAllPhotos(): Observable<any> {
+    return this.http.get(`https://jsonplaceholder.typicode.com/photos`);
+  }
+
+  public getPhoto(photoId: number): Observable<any> {
+    return this.http.get(`https://jsonplaceholder.typicode.com/photos/${photoId}`);
+  }
+
+  public deletePhoto(photo: any | number): Observable<any> {
+    const id = typeof photo === 'number' ? photo : photo.id;
+
+    return this.http.delete(`https://jsonplaceholder.typicode.com/photos/${id}`, httpOptions).pipe(
+      tap(() => console.log(`deleted photo id=${id}`))
+    )
   }
 
 }

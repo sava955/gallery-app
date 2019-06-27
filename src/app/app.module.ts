@@ -7,27 +7,30 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 
+import { NgxPaginationModule } from 'ngx-pagination';
+
 import { AppComponent } from './app.component';
 import { AlbumListComponent } from './album-list/album-list.component';
 import { AlbumContentComponent } from './album-content/album-content.component';
-import { PhotosComponent } from './photos/photos.component';
 
 import { SearchPipe } from './pipes/search.pipe';
+import { PhotoComponent } from './photo/photo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AlbumListComponent,
     AlbumContentComponent,
-    PhotosComponent,
-    SearchPipe
+    SearchPipe,
+    PhotoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

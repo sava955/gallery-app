@@ -31,7 +31,7 @@ import {
 export class AlbumContentComponent implements OnInit {
   @Input() sarchPhoto: any;
   photos: any[] = [];
-  selectedPhoto: any;
+  photo: any;
 
   constructor(
     private albumService: AlbumService, 
@@ -48,7 +48,6 @@ export class AlbumContentComponent implements OnInit {
   getAlbum(albumId: number) {
     this.albumService.getAlbumPhotos(albumId).subscribe(
       (photos) => {
-        console.log(photos);
         this.photos = photos;
       });
   }
@@ -57,12 +56,9 @@ export class AlbumContentComponent implements OnInit {
     this.location.back();
   }
 
-  selectPhoto(photo: any) {
-    this.selectedPhoto = photo;
-  }
-
-  deletePhoto(id: number) {
-    this.photos = this.photos.filter(photo => photo.id !== id);
+  deletePhoto(photo: any) {
+    this.photos = this.photos.filter(p => p !== photo);
+    this.albumService.deletePhoto(photo).subscribe();
   }
 
 }

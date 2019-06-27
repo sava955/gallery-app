@@ -1,0 +1,13 @@
+<div class="container" *ngIf="photo">
+  <div class="photo-container">
+    <div class="nav">
+        <button type="button" (click)="goBack()" class="btn back"><i class="fas fa-arrow-left"></i> Albums</button>
+    </div>
+    <div class="img-box">
+      <img [src]="photo.url" alt="">
+    </div>
+    <div class="title">
+      <span class="text-capitalize">{{photo.title}}</span>
+    </div>
+  </div>
+</div>
