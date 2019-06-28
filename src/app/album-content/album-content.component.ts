@@ -29,7 +29,7 @@ import {
     ]
 })
 export class AlbumContentComponent implements OnInit {
-  @Input() sarchPhoto: any;
+  @Input() searchPhoto: any;
   photos: any[] = [];
   photo: any;
 

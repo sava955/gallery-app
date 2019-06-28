@@ -56,4 +56,9 @@ export class AlbumListComponent implements OnInit {
     )
   }
 
+  deletePhoto(photo: any) {
+    this.photos = this.photos.filter(p => p !== photo);
+    this.albumService.deletePhoto(photo).subscribe();
+  }
+
 }
